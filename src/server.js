@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 const initRoutes = require("./routes/web");
+const PORT = process.env.PORT || 4000
 
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
 
-let port = 3000;
-app.listen(port, () => {
-  console.log(`Running at localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
